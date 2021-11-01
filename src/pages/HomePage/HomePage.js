@@ -1,25 +1,21 @@
+import { useEffect } from "react";
 import Form from "../../components/Form/Form";
 import List from "../../components/List/List";
+import useTasks from "../../hooks/useTasks";
+import { loadTasksThunk } from "../../redux/thunks/TasksThunk";
 
 const HomePage = () => {
-  const list = [
-    {
-      text: "hola",
-      done: false,
-    },
-    {
-      text: "hello",
-      done: false,
-    },
-  ];
+  const { tasks, loadTasks } = useTasks();
 
-  
+  useEffect(() => {
+    loadTasks();
+  }, [loadTasks]);
 
   return (
     <>
       <h2>TO DO LIST</h2>
       <Form />
-      <List tasksList={list} />
+      <List tasksList={tasks} />
     </>
   );
 };

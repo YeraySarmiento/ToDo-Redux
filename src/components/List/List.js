@@ -1,5 +1,5 @@
 import Task from "../Task/Task";
-import { PropTypes } from "react";
+import PropTypes from "prop-types";
 
 const List = ({ tasksList }) => {
   return (
