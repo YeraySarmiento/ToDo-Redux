@@ -1,11 +1,15 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
 import Form from "../../components/Form/Form";
 import List from "../../components/List/List";
+import useTasks from "../../hooks/useTasks";
+import { loadTasksThunk } from "../../redux/thunks/TasksThunk";
 
 const HomePage = () => {
-  const tasks = useSelector((tasks) => tasks.tasksReducer);
+  const { tasks, loadTasks } = useTasks();
 
-  
+  useEffect(() => {
+    loadTasks();
+  }, [loadTasks]);
 
   return (
     <>

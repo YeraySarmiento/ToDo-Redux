@@ -1,15 +1,6 @@
 import actionTypes from "../actions/actionTypes";
 
-const tasksReducer = (
-  tasks = [
-    { text: "hola", done: false },
-    {
-      text: "hello",
-      done: false,
-    },
-  ],
-  action
-) => {
+const tasksReducer = (tasks = [], action) => {
   let newTasks;
 
   switch (action.type) {

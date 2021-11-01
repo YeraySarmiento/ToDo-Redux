@@ -1,8 +1,6 @@
 import { loadTasksAction } from "../actions/actionCreators";
 
-const apiURL = process.env.REACT_APP_API_URL;
-
-console.log(apiURL);
+const apiURL = "https://todo-ysarmiento.herokuapp.com/todo";
 
 export const loadTasksThunk = () => {
   return async (dispatch) => {
