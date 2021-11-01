@@ -30,10 +30,12 @@ export const createTaskThunk = (task) => {
 
 export const deleteTaskThunk = (id) => {
   return async (dispatch) => {
-    const response = await fetch(apiURL, {
+    const response = await fetch(`${apiURL}/${id}`, {
       method: "DELETE",
     });
     await response.json();
-    dispatch(deleteTaskAction(id));
+    if (response.ok) {
+      dispatch(deleteTaskAction(id));
+    }
   };
 };
