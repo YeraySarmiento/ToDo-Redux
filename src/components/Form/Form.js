@@ -22,7 +22,6 @@ const Form = () => {
     event.preventDefault();
     createTask(doTask);
     setDoTask(initialData);
-    console.log(doTask);
   };
 
   return (
@@ -34,7 +33,13 @@ const Form = () => {
     >
       <div className="form-group">
         <label htmlFor="name">Task:</label>
-        <input type="text" id="text" value={doTask.text} onChange={onChange} />
+        <input
+          title="Input"
+          type="text"
+          id="text"
+          value={doTask.text}
+          onChange={onChange}
+        />
       </div>
       <div className="button-container">
         <button type="submit">Create</button>
