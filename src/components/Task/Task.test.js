@@ -11,7 +11,6 @@ describe("Given a Task Component", () => {
 
       render(<Task task={task} />);
       const taskItem = screen.getByRole("listitem", { name: "list-item" });
-      // const taskText = screen.getByText(task.text);
 
       expect(taskItem).toHaveTextContent(task.text);
     });
