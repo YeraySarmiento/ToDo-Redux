@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Form from "../../components/Form/Form";
 import List from "../../components/List/List";
 import useTasks from "../../hooks/useTasks";
-import { loadTasksThunk } from "../../redux/thunks/TasksThunk";
 
 const HomePage = () => {
   const { tasks, loadTasks } = useTasks();
