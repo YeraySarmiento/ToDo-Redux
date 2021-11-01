@@ -9,11 +9,16 @@ const Form = () => {
   const [doTask, setDoTask] = useState(initialData);
 
   const onChange = (event) => {
-    setDoTask({ ...doTask, [event.target.id]: event.target.value });
+    setDoTask({
+      ...doTask,
+      text: event.target.value,
+    });
   };
 
   const onCreate = (event) => {
     event.preventDefault();
+    setDoTask(initialData);
+
     console.log(doTask);
   };
 
