@@ -1,17 +1,9 @@
+import { useSelector } from "react-redux";
 import Form from "../../components/Form/Form";
 import List from "../../components/List/List";
 
 const HomePage = () => {
-  const list = [
-    {
-      text: "hola",
-      done: false,
-    },
-    {
-      text: "hello",
-      done: false,
-    },
-  ];
+  const tasks = useSelector((tasks) => tasks.tasksReducer);
 
   
 
@@ -19,7 +11,7 @@ const HomePage = () => {
     <>
       <h2>TO DO LIST</h2>
       <Form />
-      <List tasksList={list} />
+      <List tasksList={tasks} />
     </>
   );
 };
