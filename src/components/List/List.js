@@ -1,7 +1,11 @@
+import Task from "../Task/Task";
+
 const List = ({ tasksList }) => {
   return (
     <ul>
-      <li></li>
+      {tasksList.map((task, id) => (
+        <Task key={id} task={task} />
+      ))}
     </ul>
   );
 };
