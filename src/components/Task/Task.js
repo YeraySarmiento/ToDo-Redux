@@ -1,6 +1,6 @@
 const Task = ({ task }) => {
   return (
-    <li>
+    <li title="list-item">
       <p>{task.text}</p>
       <label>
         <input type="checkbox" />
