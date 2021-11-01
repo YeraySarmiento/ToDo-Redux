@@ -1,3 +1,5 @@
+import { PropTypes } from "react";
+
 const Task = ({ task }) => {
   return (
     <li title="list-item">
@@ -9,6 +11,10 @@ const Task = ({ task }) => {
       <button>Delete</button>
     </li>
   );
+};
+
+Task.propTypes = {
+  task: PropTypes.object.isRequired,
 };
 
 export default Task;

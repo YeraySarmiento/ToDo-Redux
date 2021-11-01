@@ -1,4 +1,5 @@
 import Task from "../Task/Task";
+import { PropTypes } from "react";
 
 const List = ({ tasksList }) => {
   return (
@@ -8,6 +9,10 @@ const List = ({ tasksList }) => {
       ))}
     </ul>
   );
+};
+
+List.propTypes = {
+  tasksList: PropTypes.array.isRequired,
 };
 
 export default List;
