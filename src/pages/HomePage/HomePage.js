@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Form from "../../components/Form/Form";
 
 const HomePage = () => {
@@ -6,6 +5,7 @@ const HomePage = () => {
     <>
       <h2>TO DO LIST</h2>
       <Form />
+      
     </>
   );
 };
