@@ -1,6 +1,9 @@
 import { useState } from "react";
+import useTasks from "../../hooks/useTasks";
 
 const Form = () => {
+  const { createTask } = useTasks();
+
   const initialData = {
     text: "",
     done: false,
@@ -17,8 +20,8 @@ const Form = () => {
 
   const onCreate = (event) => {
     event.preventDefault();
+    createTask(doTask);
     setDoTask(initialData);
-
     console.log(doTask);
   };
 
