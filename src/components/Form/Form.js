@@ -37,10 +37,10 @@ const Form = () => {
       noValidate
     >
       <div className="form-group">
-        <label htmlFor="name">Task:</label>
+        <label htmlFor="task">Task</label>
         <input
           type="text"
-          id="text"
+          id="task"
           title="input"
           value={doTask.text}
           onChange={onChange}
