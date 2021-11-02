@@ -12,7 +12,7 @@ const Task = ({ task }) => {
 
   return (
     <li title="list-item">
-      <p>{task.text}</p>
+      <h3>{task.text}</h3>
       <label>
         <input type="checkbox" />
       </label>

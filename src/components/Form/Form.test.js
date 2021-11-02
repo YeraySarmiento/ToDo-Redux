@@ -15,7 +15,7 @@ describe("Given a Form component", () => {
         </Provider>
       );
 
-      const formInput = screen.getByRole("textbox", { name: /input/i });
+      const formInput = screen.getByRole("textbox", { name: "Task" });
       const formButton = screen.getByRole("button", { name: /create/i });
 
       expect(formInput).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe("Given a Form component", () => {
         </Provider>
       );
 
-      const textInput = screen.getByRole("textbox", { name: /input/i });
+      const textInput = screen.getByRole("textbox", { name: "Task" });
       const button = screen.getByRole("button", { name: /create/i });
 
       userEvent.type(textInput, "Take the dog to vet");
