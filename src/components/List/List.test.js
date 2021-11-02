@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import List from "./List";
+import configureStore from "../../redux/store/configureStore";
+import { Provider } from "react-redux";
 
 describe("Given a List component", () => {
   describe("When it receives an array with two tasks", () => {
@@ -13,14 +15,26 @@ describe("Given a List component", () => {
     ];
 
     test("Then it should render two tasks", () => {
-      render(<List tasksList={tasksList} />);
+      const tasksStore = configureStore();
+
+      render(
+        <Provider store={tasksStore}>
+          <List tasksList={tasksList} />
+        </Provider>
+      );
       const tasks = screen.getAllByRole("listitem", { name: "list-item" });
 
       expect(tasks).toHaveLength(tasksList.length);
     });
 
     test("Then it should render the texts 'Do shopping' and 'Take the dog to vet'", () => {
-      render(<List tasksList={tasksList} />);
+      const tasksStore = configureStore();
+
+      render(
+        <Provider store={tasksStore}>
+          <List tasksList={tasksList} />
+        </Provider>
+      );
       const taskList = screen.getByRole("list", {
         name: "tasks-list",
       });
