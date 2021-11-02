@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import configureStore from "../../redux/store/configureStore";
 import List from "./List";
+import configureStore from "../../redux/store/configureStore";
+import { Provider } from "react-redux";
 
 describe("Given a List component", () => {
   describe("When it receives an array with two tasks", () => {
@@ -29,7 +29,7 @@ describe("Given a List component", () => {
 
     test("Then it should render the texts 'Do shopping' and 'Take the dog to vet'", () => {
       const tasksStore = configureStore();
-      
+
       render(
         <Provider store={tasksStore}>
           <List tasksList={tasksList} />

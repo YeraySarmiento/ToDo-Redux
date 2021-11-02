@@ -34,9 +34,9 @@ const Form = () => {
       <div className="form-group">
         <label htmlFor="name">Task:</label>
         <input
-          title="Input"
           type="text"
           id="text"
+          title="input"
           value={doTask.text}
           onChange={onChange}
         />
