@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useTasks from "../../hooks/useTasks";
 
 const Form = () => {
@@ -10,6 +10,7 @@ const Form = () => {
   };
 
   const [doTask, setDoTask] = useState(initialData);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const onChange = (event) => {
     setDoTask({
@@ -17,6 +18,10 @@ const Form = () => {
       text: event.target.value,
     });
   };
+
+  useEffect(() => {
+    setIsDisabled(doTask.text !== "" ? false : true);
+  }, [doTask.text, setIsDisabled]);
 
   const onCreate = (event) => {
     event.preventDefault();
@@ -42,7 +47,9 @@ const Form = () => {
         />
       </div>
       <div className="button-container">
-        <button type="submit">Create</button>
+        <button type="submit" disabled={isDisabled}>
+          Create
+        </button>
       </div>
     </form>
   );
