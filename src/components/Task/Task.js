@@ -1,25 +1,20 @@
 import PropTypes from "prop-types";
 import useTasks from "../../hooks/useTasks";
-import "./Task.css";
 
 const Task = ({ task }) => {
-  const { tasks, deleteTask } = useTasks();
+  const { deleteTask } = useTasks();
 
   const onDelete = (event) => {
     event.preventDefault();
+    console.log(task.id);
     deleteTask(task.id);
-  };
-
-  const onCheck = () => {
-    task = { ...task, done: !task.done };
-    console.log(task);
   };
 
   return (
     <li title="list-item">
-      <p className={task.done ? "done" : ""}>{task.text}</p>
+      <p>{task.text}</p>
       <label>
-        <input type="checkbox" onClick={onCheck} />
+        <input type="checkbox" />
       </label>
       <button>Edit</button>
       <button onClick={onDelete}>Delete</button>
