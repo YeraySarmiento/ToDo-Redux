@@ -15,7 +15,7 @@ describe("Given a Form component", () => {
       );
 
       const formInput = screen.getByRole("textbox", { name: /input/i });
-      const formButton = screen.getByRole("button", { name: "Create" });
+      const formButton = screen.getByRole("button", { name: /create/i });
 
       expect(formInput).toBeInTheDocument();
       expect(formButton).toBeInTheDocument();

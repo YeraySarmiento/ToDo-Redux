@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Task from "./Task";
-import { configureStore } from "react-redux";
+import configureStore from "../../redux/store/configureStore";
 import { Provider } from "react-redux";
 
 describe("Given a Task Component", () => {
